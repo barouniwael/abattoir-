@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    container_name: abattoir_app
+    restart: unless-stopped
+    ports:
+      - "8082:8080"
+    environment:
+      - NODE_ENV=production
+      - PORT=8080
+      - DB_PATH=/data/abattoir.db
+    volumes:
+      - abattoir_data:/data
+
+volumes:
+  abattoir_data:
