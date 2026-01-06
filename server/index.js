@@ -244,8 +244,8 @@ export function createApp(options = {}) {
     doc.end();
   });
 
-  const clientDistPath = fs.existsSync(path.join(__dirname, '..', 'client-dist'))
-    ? path.join(__dirname, '..', 'client-dist')
+  const clientDistPath = fs.existsSync(path.join(__dirname, 'public'))
+    ? path.join(__dirname, 'public')
     : path.join(__dirname, '..', 'client', 'dist');
   app.use(express.static(clientDistPath));
   app.get('*', (req, res, next) => {
