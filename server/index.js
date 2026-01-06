@@ -262,7 +262,7 @@ export function createApp(options = {}) {
 }
 
 function start() {
-  const PORT = process.env.PORT || 8081;
+  const PORT = process.env.PORT || 8080;
   const HOST = process.env.HOST || '0.0.0.0';
   const { app } = createApp();
   app.listen(PORT, HOST, () => console.log(`Server listening on ${HOST}:${PORT}`));
